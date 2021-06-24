@@ -18,6 +18,9 @@ file_to_save = os.path.join("analysis", "election_analysis.txt")
 # Initialize total votes varialble
 total_votes = 0
 
+# Initialize a list variable to hold candidate names
+candidate_options = []
+
 # Open the election results and read the file.
 with open(file_to_load) as election_data:
     # Read the file object with the reader function
@@ -28,9 +31,21 @@ with open(file_to_load) as election_data:
     
     #Print each row in the CSV file.
     for row in file_reader:
-        #  Add to the total vote count
+        
+        # Add to the total vote count
         total_votes += 1
+        
+        # Retrieve candidate name from the current iteration's row
+        candidate_name = row[2]
+        
+        # Add candidate name to the candidate_options list using the append() method if it has not been added to the candidate_options list from line 22 yet.
+        if candidate_name not in candidate_options:
+            candidate_options.append(candidate_name)
             
+                                 
+# Print candidate options
+print(candidate_options)
+
 # Print the total votes.
 print(total_votes)
 
