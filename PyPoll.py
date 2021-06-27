@@ -65,6 +65,7 @@ with open(file_to_load) as election_data:
         vote_percentage = float(votes) / float(total_votes) * 100
     
         #4. Print the candidate name and percentage of votes.
-        print(f"{candidate_name}: received {vote_percentage}% of the vote.")
+        print(f"{candidate_name}: received {vote_percentage:.2f}% of the vote.")
+        
 
                         
